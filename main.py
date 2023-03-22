@@ -11,7 +11,7 @@ def get_sentiment(text):
     print(f"Negative: {sentiment['neg']}")
     print(f"Neutral: {sentiment['neu']}")
     return sentiment['compound']
-input_text = str(input("Please type what the loved one said that you are unsure about or what was written on their note: "))
+input_text = str(input("Please enter the statement or note from your loved one that you find concerning: "))
 
 sia = SentimentIntensityAnalyzer()
 sentiment = sia.polarity_scores(input_text)
@@ -21,8 +21,8 @@ ov = sentiment['compound']
 sentiment_value = get_sentiment(input_text)
 print(f"Overall Sentiment: {sentiment_value}")
 if num > 0.150:
-  print("suicide possiblity, please contact loved one or officials")
+  print("suicide possiblity, please contact officials")
 elif ov < -0.5:
-  print("suicide possiblity, please contact loved one or officials")
+  print("suicide possiblity, please contact loved officials")
 else:
   print("suicide not detected but keep close watch if uncertain")
