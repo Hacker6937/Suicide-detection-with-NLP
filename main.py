@@ -17,10 +17,12 @@ sia = SentimentIntensityAnalyzer()
 sentiment = sia.polarity_scores(input_text)
 
 num = sentiment['neg']-sentiment['neu']
-
+ov = sentiment['compound']
 sentiment_value = get_sentiment(input_text)
 print(f"Overall Sentiment: {sentiment_value}")
 if num > 0.150:
+  print("suicide possiblity, please contact loved one or officials")
+elif ov < -0.5:
   print("suicide possiblity, please contact loved one or officials")
 else:
   print("suicide not detected but keep close watch if uncertain")
