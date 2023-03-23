@@ -4,7 +4,7 @@ import time
 
 nltk.download('vader_lexicon')
 print(
-  "Disclaimer: This program is not fully refined and designed to be on the safer side. If you feel uncertain about the safety of a loved one, please contact the authorities to ensure their well-being. The purpose of this program is for users to input comments from their family members that they find suspicious. The program will then analyze the statement and determine if it indicates suicidal tendencies. By using this program, you agree that any harm caused by it is not the fault of its creator, contributors or replit.com."
+  "Disclaimer: This program is not fully refined and designed to be on the safer side, it relies on the fact that you already find the statement suspicious. If you feel uncertain about the safety of a loved one, please contact the authorities to ensure their well-being. The purpose of this program is for users to input comments from their family members that they find suspicious. The program will then analyze the statement and determine if it indicates suicidal tendencies. By using this program, you agree that any harm caused by it is not the fault of its creator, contributors or replit.com."
 )
 time.sleep(15)
 
@@ -28,11 +28,14 @@ sentiment = sia.polarity_scores(input_text)
 
 num = sentiment['neg'] - sentiment['neu']
 ov = sentiment['compound']
+non = sentiment['neu']
 sentiment_value = get_sentiment(input_text)
 print(f"Overall Sentiment: {sentiment_value}")
 if num > 0.150:
   print("suicide possiblity, please contact officials")
 elif ov < -0.5:
+  print("suicide possiblity, please contact officials")
+elif non > 0.7:
   print("suicide possiblity, please contact officials")
 else:
   print("suicide not detected but keep close watch if uncertain")
