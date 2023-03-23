@@ -23,6 +23,6 @@ print(f"Overall Sentiment: {sentiment_value}")
 if num > 0.150:
   print("suicide possiblity, please contact officials")
 elif ov < -0.5:
-  print("suicide possiblity, please contact loved officials")
+  print("suicide possiblity, please contact officials")
 else:
   print("suicide not detected but keep close watch if uncertain")
