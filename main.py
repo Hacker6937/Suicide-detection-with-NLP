@@ -4,7 +4,7 @@ import time
 
 nltk.download('vader_lexicon')
 print(
-  "Disclaimer: This program is not fully refined. If you feel uncertain about the safety of a loved one, please contact the authorities to ensure their well-being. The purpose of this program is for users to input comments from their family members that they find suspicious. The program will then analyze the statement and determine if it indicates suicidal tendencies. By using this program, you agree that any harm caused by it is not the fault of its creator, contributors or Replit.com."
+  "Disclaimer: This program is not fully refined and designed to be on the safer side. If you feel uncertain about the safety of a loved one, please contact the authorities to ensure their well-being. The purpose of this program is for users to input comments from their family members that they find suspicious. The program will then analyze the statement and determine if it indicates suicidal tendencies. By using this program, you agree that any harm caused by it is not the fault of its creator, contributors or replit.com."
 )
 time.sleep(15)
 
